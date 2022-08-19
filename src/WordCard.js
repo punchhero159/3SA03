@@ -18,6 +18,7 @@ export default function WordCard(props){
 
     const [state, setState] = useState(prepareStateFromWord(props.value))
     let text
+    let wrong
     
     text = "TRY TO SPELL A WORD"
     const activationHandler = c => {
@@ -59,6 +60,18 @@ export default function WordCard(props){
         }
         document.getElementById("demo").innerHTML = text;
         document.getElementById("temp").innerHTML = guess;
+
+        if(guess != state.word && guess.length == state.word.length){
+            wrong = "WRONG!!"
+            document.getElementById("temp").innerHTML = wrong;   
+        }
+        else if(guess == state.word && guess.length == state.word.length){
+            wrong = "CORRECT!!!"
+            document.getElementById("temp").innerHTML = wrong;
+        }
+            
+        
+
     }
     return (
         <div>
