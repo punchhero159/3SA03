@@ -1,13 +1,22 @@
 import './App.css';
 import WordCard from './WordCard';
 
-const word = "Hello";
+
+const word = "HELLO";
+
+
 function App() {
   return (
-    <div>
-      <WordCard value={word}/>
+    
+    <div className="center"><b>
+
+      <WordCard value={word}/>  
+      </b>
     </div>
+    
   );
 }
 
+
 export default App;
+
